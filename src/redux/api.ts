@@ -6,6 +6,8 @@ export const post = createApi({
     baseQuery:fetchBaseQuery({
         baseUrl:"http://localhost:3000",
     }),
-    endpoints:()=>({})
+    endpoints:()=>({
+        
+    })
 })
 
