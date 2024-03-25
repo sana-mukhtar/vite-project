@@ -6,8 +6,8 @@ export const myApi = createApi({
     baseUrl: "http://localhost:3000",
   }),
   endpoints: (builder) => ({
-    getPosts: builder.query({
-      query: () => "posts",
+    getPosts: builder.query<Post[],string>({
+      query: () => "post",
     }),
   }),
 });

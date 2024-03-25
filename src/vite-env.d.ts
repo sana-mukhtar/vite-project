@@ -2,8 +2,9 @@
 
 
 interface Post {
-    photo : string;
-    caption : string;
+    body : string;
+    title : string;
     user_id : string;
+    id:string;
 
 }
