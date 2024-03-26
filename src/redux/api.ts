@@ -5,18 +5,22 @@ export const myApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3000",
   }),
+  tagTypes: ["PostTag"],
   endpoints: (builder) => ({
-    getPosts: builder.query<Post[],string>({
+    getPosts: builder.query<Post[], string>({
       query: () => "post",
+      providesTags: ["PostTag"],
     }),
-    newPosts : builder.mutation<Post , Post>({
-      query: (post)=>({
-        url:"post",
-        method:"POST",
-        body:post
-      })
+
+    newPosts: builder.mutation<Post, Post>({
+      query: (post) => ({
+        url: "post",
+        method: "POST",
+        body: post,
+      }),
+      invalidatesTags: ["PostTag"],
     }),
   }),
 });
 
-export const {useGetPostsQuery} = myApi
+export const { useGetPostsQuery, useNewPostsMutation } = myApi;

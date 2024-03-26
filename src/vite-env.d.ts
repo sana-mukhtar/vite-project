@@ -4,7 +4,7 @@
 interface Post {
     body : string;
     title : string;
-    user_id : string;
-    id:string;
+    user_id : number;
+    id:number;
 
 }
